@@ -1,0 +1,57 @@
+
+.box-details {
+    display: flex;
+    margin: 180px 0 0 290px;
+}
+
+.img-details, .img-details img {
+    width: 400px;
+}
+
+.info {
+    width: 100%;
+    margin-left: 40px;
+}
+
+.info ul {
+    display: flex;
+
+}
+
+.info ul li {
+    margin-left: 125px;
+    font-size: 25px;
+    list-style: none;
+}
+
+.info ul li .underline {
+    text-decoration: underline;
+}
+
+.info .likes {
+    margin: 40px 0 0 125px;
+}
+
+.info .likes p {
+    margin-bottom: 25px;
+}
+
+.info .likes a {
+    margin-bottom: 15px;
+    /* font-size: 25px; */
+    padding: 5px;
+}
+
+.comm {
+    text-align: center;
+    border: dashed;
+    display: inline-table;
+    margin-left: 845px;
+}
+.comments{
+    margin-top: 50px;
+    background-color: antiquewhite;
+}
+form {
+    margin-bottom: 100px;
+}

@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="{% static "main-css/main.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "main-css/clear.css" %}">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@1&display=swap" rel="stylesheet">
+    {% block style %}
+    {% endblock %}
+    <title>{% block site_title %}Petstagram{% endblock %}</title>
+</head>
+<body>
+<div class="root">
+    {% include 'navbar/nav.html' %}
+    {% block site_content %}
+        Petstagram
+    {% endblock %}
+
+</div>
+</body>
+</html>

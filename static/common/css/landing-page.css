@@ -1,0 +1,48 @@
+.img-landing-page {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.box {
+    width: 1000px;
+    height: 100%;
+    margin: 100px auto;
+
+    background-color: #2333;
+}
+
+.box h1 {
+    font-size: 60px;
+}
+
+.box h2 {
+
+    font-size: 20px;
+    margin-top: 5px;
+
+}
+
+.content {
+    margin-left: 25px;
+
+}
+
+.to-account {
+    padding-bottom: 50px;
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+    font-size: 20px;
+
+}
+
+.to-account .login {
+    margin: auto;
+}
+
+.to-account .sing-up {
+    margin: auto;
+}
+
+

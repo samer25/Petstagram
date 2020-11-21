@@ -1,0 +1,58 @@
+{% extends 'site/site.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'pets/css/pets_details.css' %}">
+{% endblock %}
+{% block site_title %} Details {% endblock %}
+{% include 'navbar/nav.html' %}
+{% block site_content %}
+    <div class="box-details">
+        <div class="img-details">
+            <img src="{{ pet.images.url }}" alt="Pet id {{ pet.name }}">
+        </div>
+        <div class="info">
+            <ul>
+                <li>
+                    <span class="underline">Type: </span>{{ pet.type }}
+                </li>
+                <li>
+                    <span class="underline">Name: </span>{{ pet.name }}
+                </li>
+                <li>
+                    <span class="underline">Age: </span>{{ pet.age }}
+                </li>
+
+            </ul>
+
+            <div class="likes">
+                <p>Description: {{ pet.description }}</p>
+                <a href="{% url  'like pet' pet.id %}" class="glyphicon glyphicon-thumbs-up button">like</a>
+                <p>Likes: {{ pet.like_set.count }}</p>
+                <div>
+                    <a class="button" href="{% url 'edit pet' pet.id %}">Edit</a>
+                    <a class="button" style="background-color: red" href="{% url 'delete pet' pet.id %}">Delete</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="comm">
+        <div class="comments">
+            <span style="background-color: white">Comments:</span>
+            <br>
+            {% for com in pet.comments_set.all %}
+                <p>
+                    {{ com.comment }}
+                </p>
+                <br>
+            {% endfor %}
+        </div>
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                <button class="button">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

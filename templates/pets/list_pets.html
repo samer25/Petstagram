@@ -1,0 +1,27 @@
+{% extends 'site/site.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'pets/css/pets_list.css' %}">
+{% endblock %}
+{% block site_title %} List {% endblock %}
+{% include 'navbar/nav.html' %}
+{% block site_content %}
+    <div class="header">
+        <h1>All pets photos</h1>
+    </div>
+    <div class="main-list">
+
+        {% for pet in pets %}
+            <div class="field">
+                <div class="image-dog-box">
+                    <img class="dog-img" src="{{ pet.images.url }}" alt="dog img id={{ pet.id }}">
+                </div>
+                <div class="info">
+                    <h2>{{ pet.type }} {{ pet.name }}, Age: {{ pet.age }}</h2>
+                    <p class="description-in_list">{{ pet.description }}</p>
+                    <button class="button"><a href="{% url 'pet details' pet.id %}">See details</a></button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
